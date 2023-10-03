@@ -66,10 +66,44 @@ header {
     border-radius: 20px;
 }
 
-/* Opponent selection styles */
-.ready-game {
+/* How to play window */
+.rules-wrapper {
+    width: 500px;
+    height: 500px;
+    font-size: 1.3rem;
+    position: absolute;
     display: grid;
     place-items: center;
+}
+
+.rules-wrapper ol {
+    margin-left: 23px;
+}
+
+h1,
+h2 {
+    margin-top: 40px;
+}
+
+.close-btn {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    top: 10px;
+    right: 10px;
+    color: red;
+}
+
+.close-btn:hover{
+    cursor: pointer;
+}
+
+.close-btn:active {
+    scale: 0.9;
 }
 
 .select-opponent,
@@ -80,7 +114,10 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    display: none;
+}
+
+.select-text {
+    margin-bottom: 15px;
 }
 
 .opponent-btns,
@@ -118,7 +155,7 @@ header {
     scale: 0.97;
 }
 
-/* Start player symbol selection */
+/* Player symbol selection */
 .symbol-btns {
     display: flex;
     width: 420px;
@@ -170,7 +207,6 @@ header {
     grid-auto-rows: 150px;
     justify-content: center;
     align-content: center;
-    /* display: none; */
 }
 
 .play-square {
@@ -238,6 +274,10 @@ header {
 footer {
     justify-content: center;
     align-items: center;
+}
+
+.hide {
+    display: none;
 }
 
 
