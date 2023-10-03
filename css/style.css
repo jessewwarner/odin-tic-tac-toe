@@ -7,11 +7,14 @@
     color:rgb(121, 245, 228);
 }
 
+.ctr-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .main-wrapper {
         background-image: url('../images/main_bg.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
         min-height: 100vh;
         display: grid;
         grid-template-rows: 90px 1fr 80px;
@@ -131,9 +134,6 @@ h2 {
 .opponent-btn,
 .play-again-btn {
     background-image: url('../images/button_bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     width: 180px;
     height: 72px;
     display: grid;
@@ -171,9 +171,6 @@ h2 {
 }
 
 .symbol-btn {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     width: 120px;
     height: 120px;
     display: grid;
@@ -197,9 +194,6 @@ h2 {
 /* Game board styles*/
 .game-board {
     background-image: url('../images/game_board_bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     width: 500px;
     height: 500px;
     display: grid;
@@ -226,7 +220,6 @@ h2 {
 
 .play-square:active {
     scale: 0.97;
-    cursor: pointer;
 }
 
 .player-symbol{
@@ -252,21 +245,18 @@ h2 {
     width: 480px;
     height: 480px;
     background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
     display: grid;
     align-content: space-evenly;
     justify-content: center;
     justify-items: center;
     font-size: 3rem;
-    position: absolute;
 }
 
 .win-symbol {
     width: 180px;
     height: 180px;
     background-image: url('../images/game_piece_blue.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
     border-radius: 50%;
     box-shadow: 0 0 12px 0px rgb(0, 195, 255);
 }
