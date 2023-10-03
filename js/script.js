@@ -2,6 +2,8 @@ const rulesBtn = document.querySelector('.rules-link');
 const closeBtn = document.querySelector('.close-btn');
 const oppPlayerBtn = document.querySelector('.player-btn');
 const oppCompBtn = document.querySelector('.computer-btn');
+const playAgainYes = document.querySelector('.play-again-yes');
+const playAgainNo = document.querySelector('.play-again-no');
 
 const playSquares = document.querySelectorAll('.play-square');
 
@@ -19,16 +21,24 @@ let playerTwo;
 
 const GameBoard = (() => {
     const grid = [0,0,0,0,0,0,0,0,0];
+
     const addPiece = (index, currentPlayer, square) => {
         if (grid[index] !== 0) return;
         grid[index] = currentPlayer.symbol === 'blue' ? 1 : 2;
         square.classList.add(`${currentPlayer.symbol}-player`);
         GameLogicController.checkForWin(grid);
         GameLogicController.switchPlayer();
-        console.log(grid); // REMOVE ME
     };
+
     const getGridState = () => grid;
-    return {addPiece, getGridState};
+
+    const resetGrid= () => {
+        for (let i = 0; i < grid.length; i++){
+            grid[i] = 0;
+        }
+    };
+
+    return {addPiece, getGridState, resetGrid};
 })();
 
 const GameLogicController = (() => {
@@ -49,7 +59,7 @@ const GameLogicController = (() => {
         const winningCombos = [[0,1,2],[3,4,5],[6,7,8],
                                 [0,3,6],[1,4,7],[2,5,8],
                                 [0,4,8],[2,4,6]];
-                                
+
         winningCombos.forEach((combo) => {
             if (combo.every(value => grid[value] === 1)) {
                 winner = true;
@@ -64,7 +74,14 @@ const GameLogicController = (() => {
         }
     }
 
-    return {switchPlayer, getCurrentPlayer, selectOpponent, checkForWin}
+    const resetGame = () => {
+        GameBoard.resetGrid();
+        playSquares.forEach(square => {
+            square.firstElementChild.classList.value = 'player-symbol';
+        });
+    };
+
+    return {switchPlayer, getCurrentPlayer, selectOpponent, checkForWin, resetGame}
 })();
 
 rulesBtn.addEventListener('click', () => {
