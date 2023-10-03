@@ -20,19 +20,30 @@
             </div>
         </header>
         <div class="content-wrapper">
-            <div class="select-opponent">
-                <div class="select-text">Pick your opponent...</div>
-                <div class="opponent-btns">
-                    <button class="player-btn opponent-btn">Player</button>
-                    <button class="computer-btn opponent-btn">Computer</button>
+            <div class="ready-game">
+                <div class="select-opponent">
+                    <div class="select-text">Choose your opponent...</div>
+                    <div class="opponent-btns">
+                        <button class="player-btn opponent-btn">Player</button>
+                        <button class="computer-btn opponent-btn">Computer</button>
+                    </div>
+                </div>
+
+                <div class="select-symbol">
+                    <div class="select-text">Player 1, choose your symbol</div>
+                    <div class="symbol-btns">
+                        <div class="blue-symbol symbol-btn"></div>
+                        <div class="red-symbol symbol-btn"></div>
+                    </div>
                 </div>
             </div>
+
             <div class="game-board">
                 <div class="play-square">
-                    <div class="player-symbol blue-player"></div>
+                    <div class="player-symbol"></div>
                 </div>
                 <div class="play-square">
-                    <div class="player-symbol red-player"></div>
+                    <div class="player-symbol"></div>
                 </div>
                 <div class="play-square">
                     <div class="player-symbol"></div>
@@ -56,7 +67,10 @@
                     <div class="player-symbol"></div>
                 </div>
             </div>
-            <div class="vs-msg">Player 1 vs Player 2</div>
+            <div class="win-msg">
+                <div>Player 1 Wins!</div>
+                <div class="win-symbol"></div>
+            </div>
         </div>
         <footer>
             <div class="copyright">Copyright &copy; Jesse Warner 2023</div>
