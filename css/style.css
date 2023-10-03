@@ -53,6 +53,8 @@ header {
 }
 
 .content-wrapper {
+    font-size: 1.8rem;
+    font-weight: 700;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,14 +70,12 @@ header {
 .ready-game {
     display: grid;
     place-items: center;
-    font-weight: 700;
 }
 
 .select-opponent,
 .select-symbol {
     width: 500px;
     height: 150px;
-    font-size: 1.8rem;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -83,14 +83,16 @@ header {
     display: none;
 }
 
-.opponent-btns {
+.opponent-btns,
+.play-again-btns {
     display: flex;
     width: 420px;
     justify-content: space-between;
     /* animation: fadeOut 1s ease-in forwards; */
 }
 
-.opponent-btn {
+.opponent-btn,
+.play-again-btn {
     background-image: url('../images/button_bg.png');
     background-size: cover;
     background-position: center;
@@ -105,12 +107,14 @@ header {
     border: none;
 }
 
-.opponent-btn:hover {
+.opponent-btn:hover,
+.play-again-btn:hover {
     box-shadow: 1px 1px 8px 0 rgba(0, 38, 255, 0.7);
     cursor: pointer;
 }
 
-.opponent-btn:active {
+.opponent-btn:active,
+.play-again-btn:active {
     scale: 0.97;
 }
 
@@ -166,14 +170,7 @@ header {
     grid-auto-rows: 150px;
     justify-content: center;
     align-content: center;
-}
-
-.board-cover {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 500px;
-    height: 500px;
-    display: block;
+    /* display: none; */
 }
 
 .play-square {
@@ -215,9 +212,27 @@ header {
 }
 
 
-.vs-msg {
-    font-size: 2rem;
-    display: none;
+.win-msg {
+    width: 480px;
+    height: 480px;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: grid;
+    align-content: space-evenly;
+    justify-content: center;
+    justify-items: center;
+    font-size: 3rem;
+    position: absolute;
+}
+
+.win-symbol {
+    width: 180px;
+    height: 180px;
+    background-image: url('../images/game_piece_blue.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 12px 0px rgb(0, 195, 255);
 }
 
 footer {
