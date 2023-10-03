@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color:rgb(121, 245, 228);
 }
 
 .main-wrapper {
@@ -12,7 +15,6 @@
         min-height: 100vh;
         display: grid;
         grid-template-rows: 90px 1fr 80px;
-        color: white; /* Adjust text color based on your background */
 }
 
 header,
@@ -57,6 +59,44 @@ header {
     align-items: center;
 }
 
+.opponent-btns {
+    display: flex;
+    width: 420px;
+    justify-content: space-between;
+    /* animation: fadeOut 1s ease-in forwards; */
+}
+
+.select-opponent {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 500px;
+    height: 140px;
+    font-size: 1.8rem;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.opponent-btn {
+    background-image: url('../images/button_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.opponent-btn:hover {
+    box-shadow: 1px 1px 8px 0 rgba(0, 38, 255, 0.7);
+    cursor: pointer;
+}
+
 .game-board {
     background-image: url('../images/game_board_bg.png');
     background-size: cover;
@@ -76,13 +116,53 @@ header {
     background-size: contain;
     width: 150px;
     height: 150px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
 }
 
 .play-square:hover {
-    box-shadow: 0 0 20px 5px aquamarine inset;
+    box-shadow: 0px 0px 20px 5px rgb(163, 249, 255) inset;
+    cursor: pointer;
+}
+
+.player-symbol{
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+}
+
+.red-player {
+    background-image: url('../images/game_piece_red.png');
+    border-radius: 50%;
+    box-shadow: 0 0 12px 0px red;
+}
+
+.blue-player {
+    background-image: url('../images/game_piece_blue.png');
+    border-radius: 50%;
+    box-shadow: 0 0 12px 0px rgb(0, 195, 255);
 }
 
 footer {
     justify-content: center;
     align-items: center;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes scaleAnimation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
 }
