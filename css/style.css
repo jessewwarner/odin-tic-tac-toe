@@ -55,8 +55,32 @@ header {
 .content-wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 600px;
+    height: 600px;
+    margin: auto auto;
+    border-radius: 20px;
+}
+
+/* Opponent selection styles */
+.ready-game {
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+.select-opponent,
+.select-symbol {
+    width: 500px;
+    height: 150px;
+    font-size: 1.8rem;
+    display: inline-flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    display: none;
 }
 
 .opponent-btns {
@@ -64,18 +88,6 @@ header {
     width: 420px;
     justify-content: space-between;
     /* animation: fadeOut 1s ease-in forwards; */
-}
-
-.select-opponent {
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 500px;
-    height: 140px;
-    font-size: 1.8rem;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 20px;
 }
 
 .opponent-btn {
@@ -90,6 +102,7 @@ header {
     font-size: 2rem;
     font-weight: 700;
     border-radius: 10px;
+    border: none;
 }
 
 .opponent-btn:hover {
@@ -97,6 +110,50 @@ header {
     cursor: pointer;
 }
 
+.opponent-btn:active {
+    scale: 0.97;
+}
+
+/* Start player symbol selection */
+.symbol-btns {
+    display: flex;
+    width: 420px;
+    justify-content: space-around;
+}
+
+.blue-symbol {
+    background-image: url('../images/game_piece_blue.png');
+}
+
+.red-symbol {
+    background-image: url('../images/game_piece_red.png');
+}
+
+.symbol-btn {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 120px;
+    display: grid;
+    border-radius: 50%;
+}
+
+.symbol-btn:hover {
+    cursor: pointer;
+}
+
+.blue-symbol:active {
+    scale: 0.97;
+    box-shadow: 0 0 12px 0px rgb(0, 195, 255);
+}
+
+.red-symbol:active {
+    scale: 0.97;
+    box-shadow: 0 0 12px 0px red;
+}
+
+/* Game board styles*/
 .game-board {
     background-image: url('../images/game_board_bg.png');
     background-size: cover;
@@ -111,6 +168,14 @@ header {
     align-content: center;
 }
 
+.board-cover {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 500px;
+    height: 500px;
+    display: block;
+}
+
 .play-square {
     background-image: url('../images/game_play_square.png');
     background-size: contain;
@@ -123,6 +188,11 @@ header {
 
 .play-square:hover {
     box-shadow: 0px 0px 20px 5px rgb(163, 249, 255) inset;
+    cursor: pointer;
+}
+
+.play-square:active {
+    scale: 0.97;
     cursor: pointer;
 }
 
@@ -144,10 +214,17 @@ header {
     box-shadow: 0 0 12px 0px rgb(0, 195, 255);
 }
 
+
+.vs-msg {
+    font-size: 2rem;
+    display: none;
+}
+
 footer {
     justify-content: center;
     align-items: center;
 }
+
 
 @keyframes fadeOut {
     from {
