@@ -51,11 +51,14 @@ header {
     font-size: 1.3rem;
 }
 
+a {
+    text-decoration: none;
+}
+
 .nav-link:hover,
 .close-btn:hover,
 .opponent-btn:hover,
 .play-again-btn:hover,
-.symbol-btn:hover,
 .play-square:hover   {
     cursor: pointer;
 }
@@ -76,21 +79,28 @@ header {
 
 /* How to play window */
 .rules-wrapper {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     font-size: 1.3rem;
+    padding: 25px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px;
     position: absolute;
     display: grid;
     place-items: center;
+    align-content: center;
 }
 
 .rules-wrapper ol {
     margin-left: 23px;
 }
 
-h1,
+h1 {
+    text-align: center;
+}
+
 h2 {
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 .close-btn {
@@ -99,8 +109,6 @@ h2 {
     place-items: center;
     width: 30px;
     height: 30px;
-    background-color: black;
-    border-radius: 50%;
     top: 10px;
     right: 10px;
     color: red;
@@ -110,18 +118,13 @@ h2 {
     scale: 0.9;
 }
 
-.select-opponent,
-.select-symbol {
+.select-opponent {
     width: 500px;
     height: 150px;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-}
-
-.select-text {
-    margin-bottom: 15px;
 }
 
 .opponent-btns,
@@ -152,40 +155,8 @@ h2 {
 
 .opponent-btn:active,
 .play-again-btn:active,
-.play-square:active,
-.blue-symbol:active,
-.red-symbol:active {
+.play-square:active {
     scale: 0.97;
-}
-
-/* Player symbol selection */
-.symbol-btns {
-    display: flex;
-    width: 420px;
-    justify-content: space-around;
-}
-
-.blue-symbol {
-    background-image: url('../images/game_piece_blue.png');
-}
-
-.red-symbol {
-    background-image: url('../images/game_piece_red.png');
-}
-
-.symbol-btn {
-    width: 120px;
-    height: 120px;
-    display: grid;
-    border-radius: 50%;
-}
-
-.blue-symbol:active {
-    box-shadow: 0 0 12px 0px rgb(0, 195, 255);
-}
-
-.red-symbol:active {
-    box-shadow: 0 0 12px 0px red;
 }
 
 /* Game board styles*/
